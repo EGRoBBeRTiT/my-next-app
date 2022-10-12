@@ -1,0 +1,1 @@
+export { SecondComponent } from './SecondComponent';
