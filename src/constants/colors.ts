@@ -4,4 +4,5 @@ export enum COLORS {
   BorderColor = "#4A4458",
   Black = "#000000",
   TextColor2 = "#E6E1E5",
+  ErrorRed = "#ba00009e",
 }

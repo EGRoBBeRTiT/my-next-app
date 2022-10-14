@@ -7,9 +7,10 @@ export const Card: React.FC<CardProps> = ({
   title,
   description,
   iconComponent,
+  onClick,
 }) => {
   return (
-    <CardStyled>
+    <CardStyled onClick={onClick}>
       <TitleStyled>
         <h2>{title}</h2>
         {iconComponent}

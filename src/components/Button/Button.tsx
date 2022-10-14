@@ -3,6 +3,6 @@ import { ButtonStyled } from "./Button.style";
 
 import { ButtonProps } from "./Button.types";
 
-export const Button: React.FC<ButtonProps> = () => {
-  return <ButtonStyled>Button</ButtonStyled>;
+export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+  return <ButtonStyled {...props}>{children}</ButtonStyled>;
 };

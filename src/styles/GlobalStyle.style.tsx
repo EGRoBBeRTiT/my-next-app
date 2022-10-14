@@ -15,10 +15,18 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+
 }
 
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+}
+
+input, 
+textarea, 
+select {
+    -webkit-appearance: none;
+    outline:none;
 }
 `;
