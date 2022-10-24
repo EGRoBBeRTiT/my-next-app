@@ -34,3 +34,8 @@ export const ContentStyled = styled.div`
     cursor: pointer;
   }
 `;
+
+export const SpanStyled = styled.span`
+  cursor: pointer;
+  color: ${COLORS.TextColor};
+`;

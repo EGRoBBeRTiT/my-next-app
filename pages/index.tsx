@@ -1,3 +1,5 @@
+import { BACK_URL } from "../src/config";
+import { loadData } from "../lib";
 import { HomePage } from "../src/pages/HomePage";
 import { HomePageProps } from "../src/pages/HomePage/HomePage.type";
 
@@ -6,8 +8,10 @@ const Index = ({ data }) => {
 };
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://localhost:4200/data");
-  const data = await response.json();
+  console.log(`${BACK_URL}/data`);
+
+  const data = await loadData(`${BACK_URL}/data`);
+
   return {
     props: { data },
   };

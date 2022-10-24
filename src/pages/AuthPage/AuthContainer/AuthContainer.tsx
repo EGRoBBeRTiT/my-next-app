@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { AuthContainerStyled, ButtonStyled } from "./AuthContainer.style";
 
 import { AuthContainerProps, AuthFormValues } from "./AuthContainer.types";
@@ -9,11 +9,17 @@ import { Form } from "react-final-form";
 import { InputField } from "../../../components/Fields/InputField";
 import { Button } from "../../../components/Button";
 import { validateAuthForm } from "./AuthContainer.utils";
+import { useDispatch } from "react-redux";
+import { pushFields } from "../../../store/common";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 
 export const AuthContainer: React.FC<AuthContainerProps> = () => {
+  const dispatch = useDispatch();
+  const store = useSelector((store: RootState) => store);
+
   const handleFormSubmit = useCallback((values: AuthFormValues) => {
-    console.log(values);
-    alert(JSON?.stringify(values, null, 2));
+    dispatch(pushFields(values));
   }, []);
 
   return (

@@ -1,4 +1,6 @@
 import { GetServerSidePropsContext } from "next";
+import { BACK_URL } from "../../src/config";
+import { loadData } from "../../lib";
 import { LanguagePage } from "../../src/pages/LanguagePage";
 
 const PageLanguage = ({ data }) => {
@@ -9,10 +11,8 @@ export const getServerSideProps = async (
   ctx: GetServerSidePropsContext<{ language: string }>
 ) => {
   if (ctx?.params?.language) {
-    const response = await fetch(
-      `http://localhost:4200/data/${ctx.params.language}`
-    );
-    const data = await response.json();
+    const data = await loadData(`${BACK_URL}/data/${ctx.params.language}`);
+
     return {
       props: { data },
     };

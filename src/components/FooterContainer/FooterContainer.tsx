@@ -1,6 +1,9 @@
 import React, { useCallback } from "react";
 import { Form } from "react-final-form";
+import { useDispatch, useSelector } from "react-redux";
 import { COLORS } from "../../constants/colors";
+import { RootState } from "../../store";
+import { pushFields } from "../../store/common";
 import { phoneNumberFormatter } from "../../utils";
 import { InputField } from "../Fields/InputField";
 import {
@@ -18,8 +21,12 @@ import {
 import { validateFooterForm } from "./FooterContainer.utils";
 
 export const FooterContainer: React.FC<FooterContainerProps> = () => {
+  const dispatch = useDispatch();
+  const store = useSelector((store: RootState) => store);
+
   const handleFormSubmit = useCallback((values: FooterFormValues) => {
-    alert(JSON.stringify(values, null, 2));
+    dispatch(pushFields(values));
+    alert(JSON.stringify(store.common, null, 2));
   }, []);
 
   return (

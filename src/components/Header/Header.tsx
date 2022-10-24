@@ -3,14 +3,20 @@ import React, { useCallback } from "react";
 import { HeaderProps } from "./Header.types";
 
 import "./Header.style.tsx";
-import { ContentStyled, HeaderStyled } from "./Header.style";
+import { ContentStyled, HeaderStyled, SpanStyled } from "./Header.style";
 import { Button } from "../Button";
 import { SiNextDotJs } from "@react-icons/all-files/si/SiNextDotJs";
 import { COLORS } from "../../constants/colors";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { useDispatch } from "react-redux";
+import { clearStore } from "../../store/common";
 
 export const Header: React.FC<HeaderProps> = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const { email, password } = useSelector((store: RootState) => store.common);
 
   const handleButtonClick = useCallback(() => {
     void router.push("/auth");
@@ -18,6 +24,10 @@ export const Header: React.FC<HeaderProps> = () => {
 
   const handleLogoClick = useCallback(() => {
     void router.push("/");
+  }, []);
+
+  const handleExitClick = useCallback(() => {
+    dispatch(clearStore());
   }, []);
 
   return (
@@ -28,7 +38,11 @@ export const Header: React.FC<HeaderProps> = () => {
           color={COLORS.BorderColor}
           onClick={handleLogoClick}
         />
-        <Button onClick={handleButtonClick}>Логин</Button>
+        {email && password ? (
+          <SpanStyled onClick={handleExitClick}>Выйти</SpanStyled>
+        ) : (
+          <Button onClick={handleButtonClick}>Войти</Button>
+        )}
       </ContentStyled>
     </HeaderStyled>
   );
