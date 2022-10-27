@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { Form } from "react-final-form";
 import { useDispatch, useSelector } from "react-redux";
 import { COLORS } from "../../constants/colors";
@@ -24,10 +24,12 @@ export const FooterContainer: React.FC<FooterContainerProps> = () => {
   const dispatch = useDispatch();
   const store = useSelector((store: RootState) => store);
 
-  const handleFormSubmit = useCallback((values: FooterFormValues) => {
-    dispatch(pushFields(values));
-    alert(JSON.stringify(store.common, null, 2));
-  }, []);
+  const handleFormSubmit = useCallback(
+    (values: FooterFormValues) => {
+      dispatch(pushFields(values));
+    },
+    [dispatch]
+  );
 
   return (
     <FooterContainerStyled>

@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "tests/phoneParser.test.js", "tests/phone.test.js", "tests/email.test.js", "tests/phoneParser.test.js", "tests/phone.test.js", "tests/email.test.js", "tests/reducer.test.js"  ],
   "exclude": [
     "node_modules"
   ]

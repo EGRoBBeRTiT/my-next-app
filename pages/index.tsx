@@ -8,8 +8,6 @@ const Index = ({ data }) => {
 };
 
 export const getStaticProps = async () => {
-  console.log(`${BACK_URL}/data`);
-
   const data = await loadData(`${BACK_URL}/data`);
 
   return {

@@ -31,7 +31,12 @@ export const AuthContainer: React.FC<AuthContainerProps> = () => {
       >
         {({ handleSubmit }) => (
           <>
-            <InputField name="email" type="email" placeholder="e-mail" />
+            <InputField
+              data-testid="e-mail"
+              name="email"
+              type="email"
+              placeholder="e-mail"
+            />
             <InputField
               name="password"
               type="password"
