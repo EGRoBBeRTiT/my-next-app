@@ -13,7 +13,7 @@ export const HomePage: React.FC<HomePageProps> = ({ data }) => {
   return (
     <MainLayout title="My Next App">
       <>
-        <MainComponent />
+        <MainComponent data-testid="home-page" />
         <Third />
         <SecondComponent data={data} />
         <FooterContainer />

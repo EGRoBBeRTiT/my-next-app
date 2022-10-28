@@ -31,18 +31,17 @@ export const AuthContainer: React.FC<AuthContainerProps> = () => {
       >
         {({ handleSubmit }) => (
           <>
-            <InputField
-              data-testid="e-mail"
-              name="email"
-              type="email"
-              placeholder="e-mail"
-            />
+            <InputField name="email" type="email" placeholder="e-mail" />
             <InputField
               name="password"
               type="password"
               placeholder="password"
             />
-            <ButtonStyled type="submit" onClick={handleSubmit as VoidFunction}>
+            <ButtonStyled
+              data-testid="submit"
+              type="submit"
+              onClick={handleSubmit as VoidFunction}
+            >
               Войти
             </ButtonStyled>
           </>

@@ -23,11 +23,12 @@ export const ButtonStyled = styled(Button)`
 `;
 
 export const ContentStyled = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: ${MAX_WIDTH};
+  max-width: 900px;
   padding: 40px;
   z-index: 2;
 
@@ -42,7 +43,7 @@ export const ContentStyled = styled.div`
 export const FormStyled = styled.div`
   position: absolute;
   top: 390px;
-  left: 640px;
+  left: 236px;
   display: flex;
   width: 500px;
   gap: 16px;
@@ -51,7 +52,6 @@ export const FormStyled = styled.div`
 
   input {
     width: 300px;
-    height: 56px;
   }
 
   button {

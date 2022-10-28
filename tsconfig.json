@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -22,9 +18,16 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "tests/phoneParser.test.js", "tests/phone.test.js", "tests/email.test.js", "tests/phoneParser.test.js", "tests/phone.test.js", "tests/email.test.js", "tests/reducer.test.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "tests/phoneParser.test.js",
+    "tests/phone.test.js",
+    "tests/email.test.js",
+    "tests/phoneParser.test.js",
+    "tests/phone.test.js",
+    "tests/email.test.js",
+    "tests/reducer.test.ts",
+    "tests/AuthPage.test.jsx",
+    "tests/integration.test.js"
+  ],
+  "exclude": ["node_modules"]
 }

@@ -13,7 +13,6 @@ import { BiCodeAlt } from "@react-icons/all-files/bi/BiCodeAlt";
 import { LanguagePageProps } from "./LanguagePage.types";
 
 export const LanguagePage: React.FC<LanguagePageProps> = ({ language }) => {
-  console.log(language);
   return (
     <MainLayout title={language.title}>
       <LanguagePageStyled>
@@ -25,7 +24,7 @@ export const LanguagePage: React.FC<LanguagePageProps> = ({ language }) => {
         {
           LANGUAGE_ICONS({ size: 200, color: COLORS.TextColor })[
             language.id - 1
-          ].component
+          ]?.component
         }
         <h1>{language.title}</h1>
         <TextContainerStyled>

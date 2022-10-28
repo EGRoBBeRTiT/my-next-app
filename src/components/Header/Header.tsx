@@ -34,14 +34,19 @@ export const Header: React.FC<HeaderProps> = () => {
     <HeaderStyled>
       <ContentStyled>
         <SiNextDotJs
+          data-testid="logo"
           size={50}
           color={COLORS.BorderColor}
           onClick={handleLogoClick}
         />
         {email && password ? (
-          <SpanStyled onClick={handleExitClick}>Выйти</SpanStyled>
+          <SpanStyled data-testid="logout" onClick={handleExitClick}>
+            Выйти
+          </SpanStyled>
         ) : (
-          <Button onClick={handleButtonClick}>Войти</Button>
+          <Button data-testid="login" onClick={handleButtonClick}>
+            Войти
+          </Button>
         )}
       </ContentStyled>
     </HeaderStyled>

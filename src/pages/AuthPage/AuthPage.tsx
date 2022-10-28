@@ -11,7 +11,7 @@ export const AuthPage: React.FC<AuthPageProps> = () => {
   return (
     <MainLayout title="Auth">
       <>
-        <AuthPageStyled>
+        <AuthPageStyled t>
           <TbBrandNextjs
             size={1200}
             color={COLORS.BorderColor}
